@@ -1,5 +1,5 @@
 %define upstream_name    DBIx-Class-EncodedColumn
-%define upstream_version 0.00006
+%define upstream_version 0.00009
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
@@ -14,11 +14,13 @@ Source0:    http://www.cpan.org/modules/by-module/DBIx/%{upstream_name}-%{upstre
 BuildRequires: perl(DBD::SQLite)
 BuildRequires: perl(DBIx::Class)
 BuildRequires: perl(Digest::SHA)
+BuildRequires: perl(Dir::Self)
 BuildRequires: perl(ExtUtils::MakeMaker)
 BuildRequires: perl(File::Spec)
 BuildRequires: perl(SQL::Translator)
 BuildRequires: perl(Sub::Name)
 BuildRequires: perl(Test::More)
+
 BuildArch: noarch
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}
 
@@ -38,11 +40,10 @@ manpage, but there is some key differences:
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
-
-%{make}
+%make
 
 %check
-%{make} test
+%make test
 
 %install
 rm -rf %buildroot
@@ -56,5 +57,3 @@ rm -rf %buildroot
 %doc Changes README
 %{_mandir}/man3/*
 %perl_vendorlib/*
-
-
