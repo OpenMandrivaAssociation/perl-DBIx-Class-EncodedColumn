@@ -19,6 +19,7 @@ BuildRequires: perl(ExtUtils::MakeMaker)
 BuildRequires: perl(File::Spec)
 BuildRequires: perl(SQL::Translator)
 BuildRequires: perl(Sub::Name)
+BuildRequires: perl(Test::Exception)
 BuildRequires: perl(Test::More)
 
 BuildArch: noarch
@@ -54,6 +55,6 @@ rm -rf %buildroot
 
 %files
 %defattr(-,root,root)
-%doc Changes README
+%doc Changes README META.yml
 %{_mandir}/man3/*
 %perl_vendorlib/*
