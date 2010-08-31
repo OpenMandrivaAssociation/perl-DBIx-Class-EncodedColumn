@@ -1,5 +1,5 @@
 %define upstream_name    DBIx-Class-EncodedColumn
-%define upstream_version 0.00009
+%define upstream_version 0.00010
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
